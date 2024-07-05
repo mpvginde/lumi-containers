@@ -44,7 +44,7 @@ sed -i "/^[[:space:]]*\"anemoi-models/d" "pyproject.toml"
 # If not the files are not included in the container
 cat <<EOF > MANIFEST.in
 recursive-include aifs *.py
-recursive-inculde aifs *.json
+recursive-include aifs *.json
 include aifs/*.json
 include aifs/*/*.json
 include aifs/*/*/*.json
