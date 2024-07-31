@@ -53,9 +53,14 @@ include aifs/*/*/*/*/*.json
 include aifs/*/*/*/*/*/*.json
 EOF
 
+# Clone the mlflow-branch containing the fix for AMD GPUs
+git clone -b amd-statistics git@github.com:evenmn/mlflow.git $d_SRC/mlflow #This should be merged into the main mlflow branch at some point
+# An additional bugfix
+sed -i "5iimport torch" $d_SRC/mlflow/mlflow/system_metrics/system_metrics_monitor.py
+
 cd $d_WORK
 # Remove previous container
- rm -f $f_SIF
+rm -f $f_SIF
 # Make sure cotainr can see the src directory
 export SINGULARITY_BIND=$d_SRC:/mnt
 cotainr build $f_SIF --base-image=$f_BASE --conda-env=$f_ENV --accept-licenses
