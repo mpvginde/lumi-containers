@@ -36,11 +36,15 @@ Pinning `anemoi-models` to `0.3.7` seems to resolve the issue
 ## 3. Error due to serialization of an `np.datetime64`-object  
 This seems to be related to the version of `anemoi-utils`. Pinning the version to `0.3.7` resolves the error.
 
-## 4. 'aifs-mono` python files are not copied to `site-packages` folder  
+## 4. `aifs-mono` python files are not copied to `site-packages` folder  
 When pip installing `aifs-mono`, the actual python files are not copied to the `site-packages` folder.
 Since the src folder is only mounted to the container the python files are not part of the container and true portability is lost.  
 The copying of the src files is controlled by the `MANIFEST.in` file.  This file is thus adjusted to include all the aifs-mono source files.  
 In addition all the config `yaml` files are removed from the `MANIFEST.in` file in order to prevent that users of the container would use the default config-files by accident.
+
+## 5. `mlflow` does not support AMD GPUs
+A fix was provided by the MetNO colleagues https://github.com/mlflow/mlflow/pull/12694
+So we manually install this mlflow branch
 
 *Some issues still to be resolved:*
 ## 1. `torch-scatter` not available for `ROCm`
