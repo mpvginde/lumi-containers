@@ -22,4 +22,9 @@ We could copy the aifs-mono-hackathon.yml and build.sh and start modifying it pr
 #### Alternative short term plan
 Start from a minimal container, do essentially everything in a virtual environment, then progresively move things from environment into container.
 
+Currently:
+
+One can build the proto-container with `build_proto.sh`, then install anemoi-training in a virtual environment with `install_venv_in_container.sh`. [Installation seems to proceed correctly. Trying out anemoi-training inside the container remains to be done.]
+
+
 ### Open issues

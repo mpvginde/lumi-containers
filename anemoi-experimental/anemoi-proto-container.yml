@@ -2,5 +2,6 @@ name: anemoi-proto-container
 channels:
   - conda-forge
 dependencies:
-  - pip
   - python=3.10
+  - virtualenv
+  - pip

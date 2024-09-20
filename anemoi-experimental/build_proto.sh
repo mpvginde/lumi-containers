@@ -4,6 +4,7 @@ set -e
 
 # Use latest modules 
 # check if the below is up to date and necessary
+module use /appl/local/training/modules/AI-20240529
 module load LUMI/24.03 cotainr
 
 CONTAINER=anemoi-proto-container
