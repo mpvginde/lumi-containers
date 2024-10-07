@@ -7,17 +7,19 @@ set -e
 module use /appl/local/training/modules/AI-20240529
 module load LUMI/24.03 cotainr
 
-CONTAINER=anemoi
+CONTAINER=anemoi_lam #anemoi_std
 # Directories
 d_WORK=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 d_CONDATOOLS=/scratch/project_465001235/vandenbl/containers/tools/Conda-Tools
 d_CONT=/scratch/project_465001235
 
+printf -v date '%(%Y%m%d)T'
+
 # Files
 f_ENV=$CONTAINER-recipe.yml
 f_BASE=lumi-rocm-rocm-5.6.1.sif
-f_SIF=$CONTAINER.sif
-f_INST=$CONTAINER-installed.yml
+f_SIF=${CONTAINER}_${date}.sif
+f_INST=${CONTAINER}_${date}-installed.yml
 
 cd $d_WORK
 
