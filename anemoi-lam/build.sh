@@ -12,6 +12,7 @@ module load LUMI/24.03 cotainr/2023.11.0.1-cray-python-3.9.13.1
 CONTAINER=anemoi-lam
 # Directories
 d_WORK=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+d_BASE=$d_WORK/../base-containers
 
 # Files
 f_ENV=$CONTAINER.yml
@@ -23,4 +24,4 @@ cd $d_WORK
 # Remove previous container
 rm -f $f_SIF
 
-cotainr build $f_SIF --base-image=$f_BASE --conda-env=$f_ENV --accept-licenses
+cotainr build $f_SIF --base-image=$d_BASE/$f_BASE --conda-env=$f_ENV --accept-licenses

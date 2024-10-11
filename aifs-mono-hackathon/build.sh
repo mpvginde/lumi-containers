@@ -10,6 +10,7 @@ module load LUMI/23.09 cotainr
 CONTAINER=aifs-mono-hackathon
 # Directories
 d_WORK=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+d_BASE=$d_WORK/../base-containers
 d_SRC=$d_WORK/src
 
 # Files
@@ -63,4 +64,4 @@ cd $d_WORK
 rm -f $f_SIF
 # Make sure cotainr can see the src directory
 export SINGULARITY_BIND=$d_SRC:/mnt
-cotainr build $f_SIF --base-image=$f_BASE --conda-env=$f_ENV --accept-licenses
+cotainr build $f_SIF --base-image=$d_BASE/$f_BASE --conda-env=$f_ENV --accept-licenses
