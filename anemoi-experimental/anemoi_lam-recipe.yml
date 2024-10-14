@@ -4,9 +4,9 @@ channels:
 dependencies:
   - python=3.10
   - pip:
-    - --extra-index-url https://download.pytorch.org/whl/rocm5.6/
-    - pytorch-triton-rocm==2.2.0
-    - torch==2.2.0+rocm5.6
-    - torchaudio==2.2.0+rocm5.6
-    - torchvision==0.17.0+rocm5.6
-    - git+https://github.com/ecmwf/anemoi-training.git@feature/limited_area
+    - --extra-index-url https://download.pytorch.org/whl/nightly/rocm6.2/
+    - pytorch-triton-rocm==3.0.0+21eae954ef
+    - torch==2.5.0.dev20240822+rocm6.2
+    - torchaudio==2.4.0.dev20240823+rocm6.2
+    - torchvision==0.20.0.dev20240823+rocm6.2
+    - git+https://github.com/dietervdb-meteo/anemoi-training.git@feature/limited_area_crop
