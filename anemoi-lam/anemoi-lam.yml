@@ -13,10 +13,9 @@
     - aiosignal==1.3.1
     - alembic==1.13.3
     - anemoi-datasets==0.5.7
-    - git+https://github.com/ecmwf/anemoi-graphs.git@feature/8-stretched-grid-graphs
+    - git+https://github.com/ecmwf/anemoi-graphs.git@feature/support-forcing-area-in-cutout
     - anemoi-models==0.3.0
-    - git+https://github.com/ecmwf/anemoi-training.git@09fd1e2987b4682f26d52ed16797fa20314ccf2c
-    - anemoi-utils==0.3.18
+    - git+https://github.com/dietervdb-meteo/anemoi-training.git@feature/limited_area_crop
     - aniso8601==9.0.1
     - antlr4-python3-runtime==4.9.3
     - asciitree==0.3.3
