@@ -8,8 +8,9 @@ module purge
 module use /appl/local/training/modules/AI-20240529
 module load LUMI/24.03 cotainr/2023.11.0.1-cray-python-3.9.13.1
 
+CONTAINER=anemoi_inf
 #CONTAINER=anemoi_lam 
-CONTAINER=anemoi_std
+#CONTAINER=anemoi_std
 # Directories
 d_WORK=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 d_CONDATOOLS=/scratch/project_465001235/vandenbl/containers/tools/Conda-Tools

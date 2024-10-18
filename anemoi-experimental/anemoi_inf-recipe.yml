@@ -1,0 +1,13 @@
+name: anemoi
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/nightly/rocm6.2/
+    - pytorch-triton-rocm==3.0.0+21eae954ef
+    - torch==2.5.0.dev20240822+rocm6.2
+    - torchaudio==2.4.0.dev20240823+rocm6.2
+    - torchvision==0.20.0.dev20240823+rocm6.2
+    - ai-models
+    - anemoi-inference
