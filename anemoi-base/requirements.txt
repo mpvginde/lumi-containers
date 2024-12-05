@@ -1,5 +1,6 @@
-anemoi-datasets==0.5.7
-git+https://github.com/ecmwf/anemoi-graphs.git@feature/support-forcing-area-in-cutout
-anemoi-models==0.3.0
-git+https://github.com/dietervdb-meteo/anemoi-training.git@feature/limited_area_crop
-anemoi-utils[provenance]==0.4.0
+anemoi-datasets==0.5.12
+anemoi-graphs==0.4.1
+anemoi-models==0.4.0
+anemoi-training==0.3.1
+anemoi-transform==0.1.0
+anemoi-utils==0.4.9
