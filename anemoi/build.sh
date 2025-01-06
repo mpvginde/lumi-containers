@@ -5,8 +5,8 @@ set -e
 # Use latest modules 
 # might not be necessary anymore after service session end of August 2024
 module purge
-module use /appl/local/training/modules/AI-20240529
-module load LUMI/24.03 cotainr/2023.11.0.1-cray-python-3.9.13.1
+module use /appl/local/training/modules/AI-20241126
+module load LUMI/24.03 cotainr/2023.11.0-20240909
 
 
 CONTAINER=anemoi
@@ -16,8 +16,8 @@ d_BASE=$d_WORK/../base-containers
 
 # Files
 f_ENV=$CONTAINER.yml
-f_BASE=lumi-rocm-rocm-6.2.2.sif
-f_SIF=$CONTAINER.sif
+f_BASE=lumi-rocm-rocm-6.0.3.sif
+f_SIF=${CONTAINER}.sif
 
 cd $d_WORK
 
