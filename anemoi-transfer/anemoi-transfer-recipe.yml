@@ -1,0 +1,18 @@
+name: anemoi
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python=3.11.6
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/
+    - pytorch-triton-rocm==3.0.0
+    - torchaudio==2.3.0+rocm6.0
+    - torchvision==0.18.0+rocm6.0
+    - anemoi.datasets==0.5.15
+    - anemoi.graphs==0.4.2
+    - anemoi.models==0.4.1
+    - anemoi.training==0.3.2
+    - anemoi.utils==0.4.11
+    - pyrsmi
+    - ipykernel

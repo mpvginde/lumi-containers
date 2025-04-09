@@ -1,0 +1,21 @@
+name: anemoi
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python=3.12
+  - pip=24.2
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/
+    - pytorch-triton-rocm==3.0.0
+    - torch==2.3.0+rocm6.0
+    - torchaudio==2.3.0+rocm6.0
+    - torchvision==0.18.0+rocm6.0
+    - git+https://github.com/ecmwf/anemoi-utils.git@main
+    - git+https://github.com/ecmwf/anemoi-transform.git@main
+    - git+https://github.com/ecmwf/anemoi-datasets.git@main
+    - git+https://github.com/ecmwf/anemoi-core.git@fix/lam-rollout#egg=anemoi-graphs&subdirectory=graphs
+    - git+https://github.com/ecmwf/anemoi-core.git@fix/lam-rollout#egg=anemoi-models&subdirectory=models
+    - git+https://github.com/ecmwf/anemoi-core.git@fix/lam-rollout#egg=anemoi-training&subdirectory=training
+    - pyrsmi
+    - ipykernel
