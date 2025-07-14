@@ -8,7 +8,15 @@ module purge
 module use /appl/local/training/modules/AI-20241126
 module load LUMI/24.03 cotainr/2023.11.0-20240909
 
-CONTAINER=anemoi-pretrain-torchv23-rollout
+# current rocm versions in base containers on lumi (15/04/2025)
+# 6.0.3
+# 6.1.3
+# 6.2.0
+# 6.2.1
+# 6.2.2
+
+rocm_version=6.1.3
+CONTAINER=anemoi-torch2.4-rocm6.1
 
 # Directories
 d_WORK=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -19,10 +27,9 @@ printf -v date '%(%Y%m%d)T'
 
 # Files
 f_ENV=$CONTAINER-recipe.yml
-f_BASE=/appl/local/containers/sif-images/lumi-rocm-rocm-6.0.3.sif
-#f_BASE=/appl/local/containers/sif-images/lumi-rocm-rocm-6.2.2.sif
-#f_BASE=/scratch/project_465001235/containers/anemoi-base/anemoi-base.sif
-#f_BASE=/appl/local/containers/sif-images/lumi-rocm-rocm-5.7.3.sif
+
+
+f_BASE=/appl/local/containers/sif-images/lumi-rocm-rocm-${rocm_version}.sif
 f_SIF=${CONTAINER}_${date}.sif
 f_INST=${CONTAINER}_${date}-installed.yml
 
@@ -39,4 +46,5 @@ echo 'inspecting what we have build'
 CMD="python ${d_CONDATOOLS}/conda_export.py --from-history --use-versions -o $f_INST"
 singularity exec -B $d_CONT $f_SIF bash -c "$CMD"
 
+echo "build on base container: $f_BASE" >> $f_INST
 echo 'output written to '$f_INST

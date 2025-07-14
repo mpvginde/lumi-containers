@@ -1,0 +1,25 @@
+name: anemoi
+channels:
+  - conda-forge
+  - default
+dependencies:
+  - python=3.12
+  - cmake
+  - ninja
+  - pip=24.2
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/
+    - pytorch-triton-rocm==3.0.0
+    - torch==2.3.0+rocm6.0
+    - torchaudio==2.3.0+rocm6.0
+    - torchvision==0.18.0+rocm6.0
+    - anemoi-utils==0.4.11
+    - anemoi-transform==0.1.1
+    - anemoi-datasets==0.5.15
+    - anemoi-graphs==0.4.2
+    - anemoi-models==0.4.1
+    - git+https://github.com/dietervdb-meteo/anemoi-core.git@fix/training-0.3.2-lam-rollout
+    - pyrsmi
+    - ipykernel
+    - zarr==2.17.0
+    - numcodecs==0.15.1
